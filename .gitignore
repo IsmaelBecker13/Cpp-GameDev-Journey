@@ -1,0 +1,72 @@
+
+# Carpetas de configuracion local de Visual Studio
+.vs/
+*.user
+*.suo
+*.db
+*.opendb
+*.VC.db
+
+# Carpetas de compilacion (donde se generan los .exe y temporales)
+x64/
+x86/
+Debug/
+Release/
+bin/
+obj/
+build/
+
+# Archivos compilados y de depuracion
+*.exe
+*.dll
+*.lib
+*.obj
+*.pdb
+*.ilk
+*.idb
+
+# Archivos temporales
+*.tmp
+*.log
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Linker files
+*.ilk
+
+# Debugger Files
+*.pdb
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# debug information files
+*.dwo
+/.vs/Cpp-GameDev-Journey/FileContentIndex/077b52ef-2957-4e36-a6d5-595d4234fc28.vsidx
