@@ -1,6 +1,7 @@
 
 # Carpetas de configuracion local de Visual Studio
-.vs/
+vs/
+vscode/
 *.user
 *.suo
 *.db
