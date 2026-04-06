@@ -4,6 +4,7 @@
 #include <cstdlib>
 using namespace std;
 #define MAX_HEALTH 100
+#define MAX_DAMAGE 100
 #include "include/playerCreation.h"
 
 
@@ -28,8 +29,8 @@ int main()
     char option;
     vector <player_struct> Players;
     cout<<"####playerStats.cpp v1.6###"<<endl;
-    
-    while(true)
+    bool run = true;
+    while(run)
         {
             cout<<endl<<endl;
             option = showMenu();
@@ -58,7 +59,8 @@ int main()
                     break;
                     case '3':
                         {
-                            cout<<"Elegiste la Opcion 3"<<endl;
+                            cout<<"Programa Finalizado"<<endl;
+                            run = false;
                         }
                     break;       
                     default:
