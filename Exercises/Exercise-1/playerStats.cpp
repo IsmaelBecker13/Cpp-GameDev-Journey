@@ -1,8 +1,11 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cstdlib>
 using namespace std;
+#define MAX_HEALTH 100
 #include "include/playerCreation.h"
+
 
 void readPlayer(player_struct Player)
     {
@@ -24,28 +27,38 @@ int main()
 {
     char option;
     vector <player_struct> Players;
-    cout<<"####playerStats.cpp v1.0###"<<endl;
-    //player_struct Player;
-    //Player = playerCreation();
-    //Players.push_back(Player);
+    cout<<"####playerStats.cpp v1.6###"<<endl;
+    
     while(true)
         {
+            cout<<endl<<endl;
             option = showMenu();
+            cout<<endl<<endl;
             switch(option)
                 {
                     case '1':
                         {
-                            cout<<"Elegiste la Opcion 1"<<endl;
+                            // Crear un Jugador
+                            Players.push_back(playerCreation());
                         }
                     break;
                     case '2':
                         {
-                            cout<<"Elegiste la Opcion 2"<<endl;
+                            // Modificar Jugadores
+                            if (Players.size() > 0)
+                                {
+                                    player_struct& selectedPlayer = selectAPlayer(&Players);
+                                    modifyAPlayer(selectedPlayer);
+                                }
+                            else
+                                {
+                                    cout<<"No hay jugadores aun"<<endl;
+                                }                                
                         }
                     break;
                     case '3':
                         {
-                            cout<<"Elegiste la Opcion 1"<<endl;
+                            cout<<"Elegiste la Opcion 3"<<endl;
                         }
                     break;       
                     default:
@@ -58,3 +71,4 @@ int main()
     
     return 0;
 }
+
