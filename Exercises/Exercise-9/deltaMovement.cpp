@@ -52,8 +52,8 @@ int main()
         camera.up = {0.0f, 1.0f, 0.0f}; // Up Vector, Y is up
         camera.fovy = 75.0f; // View Field in degrees
         camera.projection = CAMERA_PERSPECTIVE; // No ortographic
-        float mouseSensitivity = 1.003f;
-        float moveSpeed = 5.0f;
+        float mouseSensitivity = 0.3f;
+        float moveSpeed = 0.3f;
 
         SetConfigFlags(FLAG_WINDOW_RESIZABLE | FLAG_MSAA_4X_HINT | FLAG_VSYNC_HINT);
         InitWindow(1366, 768, "Mi first 3d game");
@@ -77,9 +77,11 @@ int main()
                         //    cout<<"vmov: "<<vmov<<" - Moving in x axis"<<endl;
 
 
-                        Vector3 movement = {vmov * moveSpeed * dt,  hmov * moveSpeed * dt, 0.0f}; // X back/forward - Y left/right - Z up/down
-                        Vector3 rotation = {0.0f, 0.0f, 0.0f};
+                        Vector3 movement = {vmov * moveSpeed,  hmov * moveSpeed, 0.0f}; // X back/forward - Y left/right - Z up/down
+                        Vector3 rotation = {mouseRotation.x * mouseSensitivity, mouseRotation.y * mouseSensitivity, 0.f}; // Rotacion Horizontal (Yaw), Rotacion Vertical (Pitch), (Roll)
+                        
                         UpdateCameraPro(&camera, movement, rotation, 0.0f);
+                        
                         // Render
                         BeginDrawing();
                             ClearBackground(WHITE);
